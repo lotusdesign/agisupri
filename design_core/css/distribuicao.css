@@ -1,0 +1,89 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #0d0d0d;
+  overflow-x: hidden;
+}
+
+
+
+
+
+#fundobranco {padding:70px 0;}
+#welcome {
+  padding: 60px 0;
+  text-align: center;
+  background: #ededed;
+}
+#welcome h2, #fundobranco h2 {
+  text-transform: uppercase;
+  width:100%;
+  position:relative;
+  text-align: center;
+
+}
+
+#welcome h2, #fundobranco h2 {margin-bottom:30px; font:22px/22px "Roboto"; color:#235c94; font-weight:700}
+#welcome h2::after, #fundobranco h2::after { height:2px; width:30%; content:''; display: block; background:#235c94; margin:0 auto; position: relative; top:-12px;}
+#welcome h2 div {text-align: center; margin:0 auto; width:100%; position: relative; z-index:1; background: #ededed; display: inline; padding:10px; }
+#fundobranco h2 div {text-align: center; margin:0 auto; width:100%; position: relative; z-index:1; background: #fff; display: inline; padding:10px;} 
+
+
+#welcome h2 span {
+  font-weight: 700;
+}
+#welcome img {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#welcome p, #fundobranco p {font:14px/24px "Roboto"; color:#8e8e8e;}
+#welcome p strong {font:16px/24px "Roboto"; display: block; color:#8e8e8e;}
+
+
+
+    /* ==========================================================================
+ Distribuição 
+========================================================================== */
+#bannerdistribuicao {background:url(../img/banner-distribuicao.jpg) center top no-repeat; background-size:cover; height:425px; width:100%; padding:60px 0;}
+#bannerdistribuicao h2 {color:#000; font:20px/24px "Roboto"; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+#bannerdistribuicao p {color:#000; font:14px/24px "Roboto"; font-weight: 400;}
+#entreemcontato {padding:60px 0;}
+.botaocontato p {color:#8e8e8e; font:14px/24px "Roboto"; font-weight: 400;}
+.botaocontato input[type="button"] {background: #f77020; border:0; text-transform: uppercase;  font:18px/18px "Roboto"; font-weight: 500; color:#fff; padding:10px 20px; border-radius:20px; margin-top:10px; transition: all 0.3s linear;}
+.botaocontato input[type="button"]:hover {background: #59b33f;}
+
+ 
+    /* ==========================================================================
+Rodapé
+========================================================================== */
+footer {
+  background: #59b33f;
+  padding: 50px 0;
+}
+
+footer h3 {margin:0 0 20px; font:18px/18px "Roboto"; font-weight:700; color:#fff; text-transform: uppercase;}
+footer p { font:11px/18px "Roboto"; color:#fff; }
+footer ul {padding:0; margin:0;}
+footer ul li {list-style:none; }
+footer ul li a {font:11px/11px "Roboto"; font-weight:700; color:#fff;}
+footer p {margin:0;}
+footer p + a {font:11px/11px "Roboto"; color:#fff; margin-top:15px; display: inline-block;}
+
+
+    /* ==========================================================================
+Media Queries
+========================================================================== */
+@media (max-width: 992px) {
+  .botaocontato {text-align:center;}
+  footer .col-md-3 {margin-bottom:30px;}
+  
+}
+
+
