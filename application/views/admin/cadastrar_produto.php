@@ -116,9 +116,6 @@
 								<textarea class="form-control" cols="30" rows="10" name="descricao"></textarea>
 							</div>
 							<div class="form-group">
-								<label>Tamanho</label> <input class="form-control" name="tamanho">
-							</div>
-							<div class="form-group">
 								<label>Imagem principal do produto (aparecerá na home)</label>
 								<div class="input-group">
 									<span class="input-group-btn"> <span class="btn btn-primary btn-file glyphicon glyphicon-folder-open"> <span>Carregar Foto</span> <input type="file" name="imagem1">
@@ -148,54 +145,6 @@
 							<br />
 							<br />
 						</form>
-						<div class="table-responsive">
-							<table class="table table-bordered table-hover tabelacliente">
-								<thead>
-									<tr>
-										<th>Produto</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><a href="editar-produto.html">Produto 1</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 2</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 3</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 4</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 5</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 6</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 7</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 8</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-produto.html">Produto 9</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-produto.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
 					</div>
 				</div>
 			</div>

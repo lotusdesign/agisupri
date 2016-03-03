@@ -34,4 +34,9 @@ class Produto_model extends CI_Model {
 
 		return $query->result_array ();
 	}
+	
+	public function excluir_produto($id_produto = 0) {
+		$query = $this-> db -> where ( 'id_produto',  $id_produto );
+		$query = $this-> db -> delete( 'produtos');
+	}
 }
