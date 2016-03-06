@@ -7,14 +7,26 @@ class Listar_produto extends CI_Controller {
 	}
 
 	public function view() {
-		$data ['produtos'] = $this->produto_model->get_produtos();
-		$this->load->view ( 'admin/listar_produto', $data);
+		session_start();
+		
+		if(array_key_exists('usuario', $_SESSION)) {
+			$data ['produtos'] = $this->produto_model->get_produtos();
+			$this->load->view ( 'admin/listar_produto', $data);
+		} else {
+			$this->load->view ( 'admin/login');
+		}
 	}
 	
 
 	public function excluir($id_produto = 0) {
-		$data ['produtos'] = $this->produto_model->excluir_produto($id_produto);
-		$this->view();
+		session_start();
+		
+		if(array_key_exists('usuario', $_SESSION)) {
+			$data ['produtos'] = $this->produto_model->excluir_produto($id_produto);
+			$this->view();
+		} else {
+			$this->load->view ( 'admin/login');
+		}
 	}
 }
 ?>

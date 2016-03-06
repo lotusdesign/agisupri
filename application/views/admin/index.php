@@ -12,7 +12,7 @@
 <!-- Custom CSS -->
 <link href="/agisupri/design_admin/css/sb-admin.css" rel="stylesheet">
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/agisupri/design_admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -51,8 +51,12 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li class="active"><a href="/agisupri/index.php/admin/view"><i class="fa fa-fw fa-dashboard"></i> Tela Inicial</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmento</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categoria</a></li>
 					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produto</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Cliente</a></li>
+					<li><a href="/agisupri/index.php/admin/adminstrar_produto"><i class="fa fa-star"></i> Administrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes</a></li>
+					<li><a href="/agisupri/index.php/admin/criar_catalogo"><i class="fa fa-user"></i> Criar Catálogo</a></li>
 					<li><a href="/agisupri/index.php/admin/ver_orcamentos"><i class="fa fa-user"></i> Visualizar Orçamentos</a></li>
 				</ul>
 			</div>
@@ -67,10 +71,10 @@
 							Olá <small> <?php echo $usuario['nome_usuario']?></small>
 						</h1>
 						
-						Ononon onono ononoono nonononono nononononon onononono nonoo non ono nonono <br/><br/>nononnnnnnnnnnnnnnonononono
-						Ononon onono ononoono nonononono nononononon onononono nonoo non ono nonono <br/><br/>nononnnnnnnnnnnnnnonononono
-						Ononon onono ononoono nonononono nononononon onononono nonoo non ono nonono <br/><br/>nononnnnnnnnnnnnnnonononono
-						Ononon onono ononoono nonononono nononononon onononono nonoo non ono nonono <br/><br/>nononnnnnnnnnnnnnnonononono
+						<br/><br/>
+						<br/><br/>
+						<br/><br/>
+						<br/><br/>
 					</div>
 				</div>
 				<!-- /.row -->

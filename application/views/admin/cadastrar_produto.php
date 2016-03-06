@@ -51,9 +51,12 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li><a href="/agisupri/index.php/admin/view"><i class="fa fa-fw fa-dashboard"></i> Tela Inicial</a></li>
-					<li class="active"><a href="javaScript:void(0);"><i class="fa fa-star"></i> Cadastrar Produto</a></li>
-					<li><a href="/agisupri/index.php/admin/listar_produtos"><i class="fa fa-star"></i> Listar Produtos</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes na Home</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmento</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categoria</a></li>
+					<li class="active"><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produto</a></li>
+					<li><a href="/agisupri/index.php/admin/adminstrar_produto"><i class="fa fa-star"></i> Administrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes</a></li>
+					<li><a href="/agisupri/index.php/admin/criar_catalogo"><i class="fa fa-user"></i> Criar Catálogo</a></li>
 					<li><a href="/agisupri/index.php/admin/ver_orcamentos"><i class="fa fa-user"></i> Visualizar Orçamentos</a></li>
 				</ul>
 			</div>

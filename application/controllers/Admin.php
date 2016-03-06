@@ -11,9 +11,9 @@ class Admin extends CI_Controller {
 		
 		if(array_key_exists('usuario', $_SESSION)) {
 			$data['usuario'] = $_SESSION['usuario'];
-			$this->load->view ( 'admin/index', $data);
-		} else {		
-			$this->load->view ( 'admin/login');
+			$this->load->view ( 'admin/index', $data );
+		} else {
+			$this->load->view ( 'admin/login' );
 		}
 	}
 	
@@ -21,14 +21,17 @@ class Admin extends CI_Controller {
 		session_start();
 		
 		if(array_key_exists('usuario', $_SESSION)) {
+			$_SESSION["usuario"] = $data['usuario'];
+			$this->load->view ( 'admin/index', $data);
+		} else {
 			$data['usuario'] = $this->usuario_model->autenticar();
 			
 			if($data['usuario'] != null) {
-				$this->load->view ( 'admin/index', $data);
 				$_SESSION["usuario"] = $data['usuario'];
+				$this->load->view ( 'admin/index', $data);
 			} else {
 				$data['mensagem'] = 'Usuário e/ou senha inválidos! Verifique e tente novamente';
-				$this->load->view ( 'admin/login', $data);
+				$this -> load -> view( 'admin/login', $data);
 			}
 		}
 	}

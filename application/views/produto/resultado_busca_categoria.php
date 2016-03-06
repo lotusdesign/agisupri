@@ -34,27 +34,31 @@
 	<section class="main-header">
 		<?php include 'application/views/templates/header.php';?>
 	</section>
-	<section id="bannerconsultoria">
+	<section id="fundobranco">
 		<div class="container">
-			<div class="col-md-5">
-				<h2>
-					<div>Produtos da categoria "<?php echo $busca_por_categoria['nome_categoria'] ?>" do Segmento "<?php echo $segmento['nome_segmento']?>"</div>
-				</h2>
-			</div>
+			<h2><div>Produtos da categoria "<?php echo $busca_por_categoria['nome_categoria'] ?>" do Segmento "<?php echo $segmento['nome_segmento']?>"</div></h2>
+			<?php foreach ($resultado as $res) { ?>
+				<div class="col-md-3 col-xs-6 resultados">
+					<div class="item">
+						<div class="box"> 
+							<img src="/agisupri/design_core/img/produtos/<?php echo $res["imagem_produto1"]?>">
+							<p><?php echo $res["nome"]?></p>
+							<p><?php echo $res["descricao"]?></p>
+							<div class="legenda-box">
+								<div class="legenda-box-conteudo">
+									<div class="ver-produto text-faded">
+										<a href="/agisupri/index.php/produto/detalhe/<?php echo $res['id_produto']?>">
+											<img src="/agisupri/design_core/img/ver.png" />
+											<p>Ver produto</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
 		</div>
-		
-		<?php foreach ($resultado as $res) { ?>
-		<div class="container">
-			<div class="col-md-5">
-				<a href="/agisupri/index.php/produto/detalhe/<?php echo $res['id_produto']?>">
-					<img src="/agisupri/design_core/img/produtos/<?php echo $res["imagem_produto1"]?>" width="60">
-					<?php echo $res["nome"]?>
-					<?php echo $res["descricao"]?>
-				</a>
-			</div>
-		</div>
-		<?php } ?>
-		
 	</section>
 	<!-- Rodapé -->
 	<?php include 'application/views/templates/footer.php';?>

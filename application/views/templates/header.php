@@ -84,21 +84,27 @@ function validar_busca() {
                         </li>
 						<li><a href="/agisupri/index.php/home#clientes" class="page-scroll">Clientes</a></li>						
 						<li><a href="/agisupri/index.php/home#contato" class="page-scroll">Contato</a></li>
-						<li>
+						<li class="input-group">
 							<form method="post" name="frm_busca" action="/agisupri/index.php/resultados_busca">
-								<input type="text" placeholder="Busca de Produtos" name="txt_busca" id="txt_busca"> 
+								<input type="text" class="form-control" placeholder="Busca de Produtos" name="txt_busca" id="txt_busca"> 
 								<a href="javaScript: validar_busca();">Buscar</a>
 							</form>
 						</li>
 					</ul>					
 				</div>
-				<div class="col-md-3 col-xs-12 pedidos">
+				<div class="col-md-2 col-xs-12 pedidos pull-right">
 					<p>							
 						<img src="/agisupri/design_core/img/icone-pedido.png" /> Confira seu pedido na área do cliente:						
 					</p>						
 					<p>							
 						<input type="text" value="Usuário" onblur="this.value='Usuário'" onfocus="this.value=''" /> 
 						<input type="password" value="Senha" onblur="this.value='Senha'" onfocus="this.value=''" />						
+					</p>
+					<p class="shop">
+						<i class="fa fa-shopping-cart"></i>
+						<span>
+							1
+						</span>
 					</p>					
 				</div>				
 			</div>			

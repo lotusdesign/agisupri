@@ -8,7 +8,7 @@ a:hover {text-decoration: none}
 /* Navigation Style  */
 .navbar-default { background: rgba(247, 247, 247, 1); margin-bottom: 0;border: none;}
 .navbar-default .navbar-header {width: 16%;  padding-right: 15px;}
-.navbar-default .nav-wrap {width: 59%;}
+.navbar-default .nav-wrap {width: 66%;}
 .navbar-default .nav > li > a { font:14px/14px 'Roboto'; font-weight:400;color: #235c94;text-transform: uppercase;padding: 35px 8px;-moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out;-webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 .navbar-default .nav > li.active > a{ font-weight:700;}
 .navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus, .navbar-default .nav > li > a:active { color: #a3a3a3;}
@@ -20,7 +20,7 @@ a:hover {text-decoration: none}
 .top-nav-collapse .navbar-brand { height: auto;}
 .top-nav-collapse .navbar-brand img {/*width: 180px;*/ transform: scale(1.1, 1.1); -ms-transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1); /*height: 52px;*/ }
 .top-nav-collapse .nav > li > a { padding: 30px 15px;}
-.pedidos {margin-top:10px;}
+.pedidos {margin-top:10px; position:relative;}
 .pedidos input {border:1px #eaeaea solid; border-radius:3px; width:70px; margin:0 2px; color:#858585; padding:3px; font:12px/12px 'Roboto'; font-weight:400; }
 .pedidos p {display:block; width:100%; font:12px/12px 'Roboto'; font-weight:400; color:#858585;}
 .pedidos p img {vertical-align: baseline;}
@@ -99,21 +99,22 @@ a:hover {text-decoration: none}
 /* Produtos */
 #produtos {text-align:center; padding:70px 0;}
 #owl-demo {margin-bottom:25px;}
-#owl-demo .item{margin: 10px; color: #FFF; border:1px #dbdbdb solid;padding: 8px; position: relative; min-height:225px;}
-#owl-demo p {font:14px/14px "Roboto"; font-weight:700; color:#858585; text-align:left; margin:10px 0 20px;}
-#owl-demo .item img {width:100%; border:1px #dbdbdb solid;}
+#owl-demo .item, .resultados .item {margin: 10px; color: #FFF; border:1px #dbdbdb solid;padding: 8px; position: relative; min-height:225px;}
+#owl-demo p, .resultados p {font:14px/14px "Roboto"; font-weight:700; color:#858585; text-align:left; margin:10px 0 20px;}
+#owl-demo .item img, .resultados .item .box img {width:100%; border:1px #dbdbdb solid;}
 .customNavigation{text-align: center;}
 .customNavigation a{-webkit-user-select: none; -khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 .owlslide {position:relative;}
 .owlslide .prev {float:left; cursor:pointer; position:absolute; top:210px; left:0;}
 .owlslide .next {float:right; cursor: pointer;  position:absolute; top:210px; right:0;}
-#owl-demo .item .box {text-decoration: none}
-#owl-demo .item .box .legenda-box {display: block; position: absolute; left:0; bottom: 0;width: 100%; height: 100%;text-align: center;color: #fff;opacity: 0;background: rgba(0, 0, 0, 0.9); -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
-#owl-demo .item .legenda-box .legenda-box-conteudo {position: absolute;top: 50%;width: 100%; text-align: center; transform: translateY(-50%);}
-#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto {text-transform: uppercase;font-size: 22px;font-weight: 700;}
-#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto img {width:auto; border:0;}
-#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto p {font:14px/14px "Roboto"; color:#fff; text-transform: none; text-align: center;}
-#owl-demo .item .box:hover .legenda-box {opacity: 1;}
+#owl-demo .item .box, .resultados .item .box {text-decoration: none}
+#owl-demo .item .box .legenda-box, .resultados .item .box .legenda-box {display: block; position: absolute; left:0; bottom: 0;width: 100%; height: 100%;text-align: center;color: #fff;opacity: 0;background: rgba(0, 0, 0, 0.9); -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+#owl-demo .item .legenda-box .legenda-box-conteudo, .resultados .item .legenda-box .legenda-box-conteudo {position: absolute;top: 50%;width: 100%; text-align: center; transform: translateY(-50%);}
+#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto {text-transform: uppercase;font-size: 22px;font-weight: 700;}
+#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto img, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto img {width:auto; border:0;}
+#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto p, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto p {font:14px/14px "Roboto" !important; color:#fff !important; text-transform: none; text-align: center;}
+#owl-demo .item .box:hover .legenda-box, .resultados .item .box:hover .legenda-box {opacity: 1;}
+.resultados .item {min-height:400px !important;}
 
 /* Clientes */
 #clientes ul {padding:0; margin:0;}
@@ -377,6 +378,68 @@ html body .nav.navbar-nav li.dropdown-submenu ul.menucascata {top:100%; left:0;}
 	.produtosinterna .prev, .produtosinterna .next {display:none;}
 	}
 
+.nav.navbar-nav form {
+	position:relative;
+	background:#fff;
+	margin-top:23px;
+}
+
+.nav.navbar-nav {width:100%;}
+
+.nav.navbar-nav li.input-group {
+	width:35%;
+}
+
+.nav.navbar-nav form a{
+	position: absolute;
+	right:3px;
+	top:3px;
+	z-index: 3;
+	background:#235c94;
+	color:#fff;
+	text-transform:uppercase;
+	padding:4px 10px;
+	transition: all 0.3s linear;
+}
+
+.nav.navbar-nav form a:hover {background: #6ccee3;}
+
+@media (max-width: 992px) {
+	.nav.navbar-nav li.input-group {
+		width:50% !important;
+		margin:0 auto;
+	}
+}
+
+@media (max-width: 500px) {
+	.col-md-3.col-xs-6.resultados {
+		width:100%;
+		
+	}
+	
+	.resultados .item {
+		min-height:0 !important;
+	}
+	
+	#quemsomos h2, #fundobranco h2, #servicos h2, #produtos h2, #clientes h2, #contato h2, #bannerconsultoria h2, #logistica h2, #revenda h2 {
+		font:22px/40px "Roboto";
+		font-weight:700;
+	}
+}
 
 
+@media (max-width: 1200px) {
+	.nav.navbar-nav li.input-group {
+		width:26%;
+	}
+}
 
+
+html nav.top-nav-collapse li.input-group {
+	width:30% !important;
+}
+
+.shop {position:absolute; right:-20px; top:16px; border-radius:50%; width:40px !important; height:40px; background:#235c94; color:#fff; font-size:20px; transition: all 0.3s linear;}
+.shop:hover {background: #6ccee3;}
+.shop i {font-size:20px; line-height:40px; color:#fff;}
+.shop span {color:#fff;}
