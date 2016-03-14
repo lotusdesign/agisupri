@@ -7,7 +7,6 @@ class Produto extends CI_Controller {
 		$this->load->model ( 'categoria_model' );
 		$this->load->model ( 'segmento_model' );
 		$this->load->model ( 'cor_model' );
-		$this->load->library('pagination');
 	}
 	
 	public function buscar() {
@@ -28,7 +27,6 @@ class Produto extends CI_Controller {
 	}
 
 	public function obter_produto($id_produto = 0) {
-		
 		$data['cores'] = $this -> cor_model -> get_cores();
 		$data['produto_detalhe'] = $this -> produto_model -> get_produtos($id_produto);
 		$data['produto_detalhe']['categoria'] = $this -> categoria_model -> obter_categoria($data['produto_detalhe']['id_categoria']);
@@ -36,13 +34,12 @@ class Produto extends CI_Controller {
 		
 		$i = 0;
 		while ($i < 5) {
-			$data['produtos_relacionados'][$i] = $this -> produto_model -> get_produtos(mt_rand(1, 50));
+			$data['produtos_relacionados'][$i] = $this -> produto_model -> get_produtos();
 			
 			if($data['produtos_relacionados'][$i] != null) {
 				$i++;
 			}
 		}
-		
 		$this->load->view ( 'produto/produto_interna', $data);
 	}
 	
@@ -52,7 +49,6 @@ class Produto extends CI_Controller {
 		for ($i = 0; $i < count($data['categorias']); $i ++) {
 			$data ['categorias'][$i]['produtos'] = $this->produto_model->get_produtos_por_categoria($data['categorias'][$i]['id_categoria']);
 		}
-		
 		$this->load->view ( 'produto/produtos_home');
 	}
 	

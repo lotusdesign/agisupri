@@ -67,7 +67,6 @@ $route['admin/salvar_edicao_segmento'] = '/segmento/salvar_edicao';
 $route['admin/carregar_segmento/(:any)'] = '/segmento/carregar_segmento/$1';
 /* CATEGORIA */
 $route['admin/obter_categorias_combo/(:any)'] = '/cadastrar_produto/obter_categorias_combo/$1';
-
 $route['admin/cadastrar_categoria'] = '/categoria/view';
 $route['admin/salvar_categoria'] = '/categoria/salvar';
 $route['admin/excluir_categoria/(:any)'] = '/categoria/excluir/$1';
@@ -75,11 +74,19 @@ $route['admin/salvar_edicao_categoria'] = '/categoria/salvar_edicao';
 $route['admin/carregar_categoria/(:any)'] = '/categoria/carregar_categoria/$1';
 
 /* PRODUTO */
-$route['admin/cadastrar_produto'] = '/cadastrar_produto/view'; 
+$route['admin/cadastrar_produto'] = '/cadastrar_produto/view';
 $route['admin/salvar_produto'] = '/cadastrar_produto/salvar';
-$route['admin/listar_produtos'] = '/listar_produto/view';
-$route['admin/excluir_produto/(:any)'] = '/listar_produto/excluir/$1';
+$route['admin/administrar_produtos'] = '/administrar_produtos/view';
+$route['admin/excluir_produto/(:any)'] = '/administrar_produtos/excluir/$1';
+$route['admin/editar_produto/(:any)'] = '/administrar_produtos/carregar_produto/$1';
 /* CLIENTE */
-$route['admin/cadastrar_cliente'] = '/cadastrar_cliente/view';
-$route['admin/salvar_cliente'] = '/cadastrar_cliente/salvar';
+$route['admin/cadastrar_cliente'] = '/cliente/view';
+$route['admin/salvar_cliente'] = '/cliente/salvar';
 $route['admin'] = '/admin/view';
+
+/* ORÇAMENTOS */
+$route['orcamento/salvar'] = '/orcamento/salvar';
+$route['orcamento/listar_pedido'] = '/orcamento/listar';
+$route['orcamento/excluir_item/(:any)'] = '/orcamento/excluir/$1';
+$route['orcamento/confirma_exclusao'] = '/orcamento/confirma_exclusao';
+$route['orcamento/confirma_solicitacao'] = '/orcamento/confirma_solicitacao';

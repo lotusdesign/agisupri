@@ -1,7 +1,5 @@
 <?php
 
-$this->load->database ();
-
 $query = $this->db->get_where ( 'segmentos');
 $segmentos = $query->result_array ();
 
@@ -10,10 +8,11 @@ for ($i = 0; $i < count($segmentos); $i ++) {
 	$segmentos[$i]["categorias"] = $query->result_array ();
 	
 	for ($j = 0; $j < count($segmentos[$i]["categorias"]); $j ++) {
-		$query = $this->db->get_where ( 'produtos', array ('id_categoria' => $segmentos[$i]["categorias"][$j]["id_categoria"]) );
+		$query = $this->db->get_where ( 'produtos', array ('id_categoria' => $segmentos[$i]["categorias"][$j]["id_categoria"], 'status' => 1));
 		$segmentos[$i]["categorias"][$j]["produtos"] = $query->result_array ();
 	}
 }
+
 ?>
 <script>
 function validar_busca() {
@@ -93,20 +92,25 @@ function validar_busca() {
 					</ul>					
 				</div>
 				<div class="col-md-2 col-xs-12 pedidos pull-right">
-					<p>							
+					<p>
 						<img src="/agisupri/design_core/img/icone-pedido.png" /> Confira seu pedido na área do cliente:						
-					</p>						
-					<p>							
+					</p>
+					<p>
 						<input type="text" value="Usuário" onblur="this.value='Usuário'" onfocus="this.value=''" /> 
 						<input type="password" value="Senha" onblur="this.value='Senha'" onfocus="this.value=''" />						
 					</p>
 					<p class="shop">
-						<i class="fa fa-shopping-cart"></i>
-						<span>
-							1
-						</span>
+						<a href="/agisupri/index.php/orcamento/listar">
+							<i class="fa fa-shopping-cart"></i>
+							<span>
+								<?php 
+									$pedido = $this->session->userdata('pedido');
+									echo count($pedido);
+								?>
+							</span>
+						</a>
 					</p>					
-				</div>				
-			</div>			
+				</div>
+			</div>
 		</div>		
 	</nav>

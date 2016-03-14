@@ -51,10 +51,10 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li class="active"><a href="/agisupri/index.php/admin/view"><i class="fa fa-fw fa-dashboard"></i> Tela Inicial</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmento</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categoria</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produto</a></li>
-					<li><a href="/agisupri/index.php/admin/adminstrar_produto"><i class="fa fa-star"></i> Administrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmentos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categorias</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/administrar_produtos"><i class="fa fa-star"></i> Administrar Produtos</a></li>
 					<li><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes</a></li>
 					<li><a href="/agisupri/index.php/admin/criar_catalogo"><i class="fa fa-user"></i> Criar Catálogo</a></li>
 					<li><a href="/agisupri/index.php/admin/ver_orcamentos"><i class="fa fa-user"></i> Visualizar Orçamentos</a></li>
@@ -70,7 +70,14 @@
 						<h1 class="page-header">
 							Olá <small> <?php echo $usuario['nome_usuario']?></small>
 						</h1>
-						
+						<b>Cadastrar Segmentos</b> - Tela para cadastro de segmentos de produtos.<br/>
+						<b>Cadastrar Categorias</b> - Tela para cadastro de categorias de produtos. É necessário cadastrar o segmento.<br/>
+						<b>Cadastrar Produtos</b> - Tela para cadastro de produtos. É necessário Cadastrar Categoriass.<br/>
+						<b>Administrar Produtos</b> - Nessa tela é possível listas, editar e excluir produtos.<br/>
+						<b>Cadastrar Clientes</b> - Tela para cadastro de clientes. É possível selecionar os clientes que serão apresentados na home do site.<br/>
+						<b>Criar Catálogo</b> - Tela para criação de catálogos de produtos por cliente.<br/>
+						<b>Visualizar Orçamentos</b> - Nessa tela são apresentados os orçamentos solicitados pelos clientes no site.<br/>
+						<b>Usuários</b> - Tela para cadastro, edição e exclusão de usuários do Painel de Administração.<br/>
 						<br/><br/>
 						<br/><br/>
 						<br/><br/>

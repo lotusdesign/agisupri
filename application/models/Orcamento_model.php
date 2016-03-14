@@ -2,7 +2,7 @@
 class Orcamento_model extends CI_Model {
 
 	public function __construct() {
-		$this->load->database ();
+		
 	}
 	
 	public function salvar_orcamento() {
@@ -16,7 +16,9 @@ class Orcamento_model extends CI_Model {
 				'empresa' => $this->input->get('empresa'),
 				'cnpj' => $this->input->get('cnpj')
 		);
-		return $this->db->insert('orcamentos', $data);
+		
+		$this->db->insert('orcamentos', $data);
+		return $this->db->insert_id();
 	}
 }
 ?>

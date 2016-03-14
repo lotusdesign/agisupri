@@ -3,7 +3,7 @@
 class Categoria_model extends CI_Model {
 
 	public function __construct() {
-		$this->load->database ();
+		
 	}
 	
 	public function get_categorias() {
@@ -15,7 +15,7 @@ class Categoria_model extends CI_Model {
 		if($id_categoria === 0) {
 			return null;
 		}
-		$query = $this -> db -> get_where ( 'categorias', array("id_categoria" => $id_categoria));
+		$query = $this -> db -> get_where ( 'categorias', array("id_categoria" => $id_categoria, "status" => 1));
 		return $query->row_array ();
 	}
 	
@@ -23,7 +23,6 @@ class Categoria_model extends CI_Model {
 		$this->db->where('id_categoria', $id_categoria);
 		$this->db->update('categorias', array('status' => 0));
 	}
-	
 	
 	public function salvar_categoria() {
 		$data = array('nome_categoria' => $this->input->post('nome_categoria'), 
@@ -35,7 +34,7 @@ class Categoria_model extends CI_Model {
 		if($id_segmento === 0) {
 			return null;
 		}
-		$query = $this->db->get_where ( 'categorias', array("id_segmento" => $id_segmento));
+		$query = $this->db->get_where ( 'categorias', array("id_segmento" => $id_segmento, "status" => 1));
 		return $query->result_array ();
 	}
 	

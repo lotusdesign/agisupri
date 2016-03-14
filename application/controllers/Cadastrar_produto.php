@@ -6,7 +6,7 @@ class Cadastrar_produto extends CI_Controller {
 		parent::__construct ();
 		$this->load->model ( 'segmento_model' );
 		$this->load->model ( 'categoria_model' );
-		$this->load->model ( 'cadastrar_produto_model' );
+		$this->load->model ( 'produto_model' );
 	}
 
 	public function view() {
@@ -31,7 +31,7 @@ class Cadastrar_produto extends CI_Controller {
 	public function salvar() {
 		session_start();
 		if(array_key_exists('usuario', $_SESSION)) {
-			$insert_id = $this->cadastrar_produto_model->salvarProduto();
+			$insert_id = $this->produto_model->salvarProduto();
 			
 			$data ['mensagem'] = 'Produto salvo com sucesso!';
 			$this->load->view ( 'admin/cadastrar_produto', $data);

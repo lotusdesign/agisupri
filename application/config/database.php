@@ -93,15 +93,14 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-);
-*/
+);*/
 /* LOCAL */ 
  $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'Basics)1',
-	'database' => 'agisupri',
+	'database' => 'agisufnv_site',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

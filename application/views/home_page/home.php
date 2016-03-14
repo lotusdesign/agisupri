@@ -46,9 +46,9 @@
 			<div class="caption">					
 				<h2>CUIDANDO DA SUA EMPRESA</h2>					
 				<h3>NOSSA CONSULTORIA IRÁ AJUDAR NA BUSCA E HOMOLOGAÇÃO <br/> dos itens necessários para seu negócio</h3>				
-			</div>			
-		</div>		
-	</div>	
+			</div>
+		</div>
+	</div>
 </section>	
 <!-- Quem somos -->	
 <section id="quemsomos">		

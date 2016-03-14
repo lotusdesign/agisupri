@@ -12,7 +12,7 @@
 <!-- Custom CSS -->
 <link href="/agisupri/design_admin/css/sb-admin.css" rel="stylesheet">
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/agisupri/design_admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -51,10 +51,10 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li><a href="/agisupri/index.php/admin/view"><i class="fa fa-fw fa-dashboard"></i> Tela Inicial</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmento</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categoria</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produto</a></li>
-					<li><a href="/agisupri/index.php/admin/adminstrar_produto"><i class="fa fa-star"></i> Administrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmentos</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categorias</a></li>
+					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produtos</a></li>
+					<li><a href="/agisupri/index.php/admin/administrar_produtos"><i class="fa fa-star"></i> Administrar Produtos</a></li>
 					<li class="active"><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes</a></li>
 					<li><a href="/agisupri/index.php/admin/criar_catalogo"><i class="fa fa-user"></i> Criar Catálogo</a></li>
 					<li><a href="/agisupri/index.php/admin/ver_orcamentos"><i class="fa fa-user"></i> Visualizar Orçamentos</a></li>
@@ -67,7 +67,7 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h1 class="page-header">Cadastrar Cliente</h1>
+						<h1 class="page-header">Cadastrar Clientes</h1>
 						<ol class="breadcrumb">
 							<li><i class="fa fa-dashboard"></i> <a href="index.html">Tela Inicial</a></li>
 							<li class="active"><i class="fa fa-file"></i> Cadastrar Clientes</li>
@@ -79,8 +79,49 @@
 					<div class="col-lg-6">
 						<form role="form" class="formcliente" action="/agisupri/index.php/admin/salvar_cliente" enctype="multipart/form-data" method="post">
 							<div class="form-group">
-								<label>Nome do Cliente</label> <input class="form-control" name="nome">
+								<label>Nome:</label><input type="text" name="nome" class="form-control">
 							</div>
+							
+							<div class="form-group">
+								<label>E-mail:</label><input type="text" name="email" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Cargo:</label><input type="text" name="cargo" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Telefone:</label><input type="text" name="telefone" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Celular:</label><input type="text" name="celular" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Razão Social:</label><input type="text" name="razaoSocial" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>CNPJ:</label><input type="text" name="cnpj" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Endereço:</label><input type="text" name="endereco" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Número:</label><input type="text" name="numero" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Bairro:</label><input type="text" name="bairro" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Complemento:</label><input type="text" name="complemento" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Cidade:</label><input type="text" name="cidade" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Estado:</label><input type="text" name="estado" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Observaçoes:</label><br/><textarea name="observacoes" class="form-control"></textarea>
+							</div>
+							
                             <div class="form-group">
                                 <label>Logotipo</label>
                                 <div class="input-group">
@@ -89,8 +130,9 @@
                                             <span>Carregar Logotipo</span> <input type="file" name="logotipo">
                                         </span>
                                     </span>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" class="form-control" readonly><br/>
                                 </div>
+                            *Clientes com logotipos cadastrados aparecerão na home do site
                             </div>
                             <br/>
 							<button type="submit" class="btn btn-sm btn-primary">ADICIONAR CLIENTE</button>
@@ -101,66 +143,27 @@
 								<thead>
 									<tr>
 										<th>Cliente</th>
-										<th>Email</th>
+										<th>Razão Social</th>
+										<th>Telefone</th>
+										<th>E-mail</th>
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
+									<?php foreach ($clientes as $cliente) { ?>
 									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
+										<td><a href="editar-cliente.html"><?php echo $cliente['nome']?></a></td>
+										<td><a href="editar-cliente.html"><?php echo $cliente['razaoSocial']?></a></td>
+										<td><a href="editar-cliente.html"><?php echo $cliente['telefone']?></a></td>
+										<td><a href="editar-cliente.html"><?php echo $cliente['email']?></a></td>
+										<td>
+											<a href="/agisupri/index.php/admin/excluir_cliente/<?php echo $cliente['idCliente']?>" 
+												title="Excluir" class="fa fa-times"></a> 
+											<a href="/agisupri/index.php/admin/editar_produto/<?php echo $cliente['idCliente']?>" 
+												title="Editar" class="fa fa-pencil-square-o"></a>
+										</td>
 									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
-									<tr>
-										<td><a href="editar-cliente.html">Roberto Dantas</a></td>
-										<td><a href="editar-cliente.html">robertogdantas@gmail.com</a></td>
-										<td><a href="#" title="Excluir" class="fa fa-times"></a> <a href="editar-cliente.html" title="Editar" class="fa fa-pencil-square-o"></a></td>
-									</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>

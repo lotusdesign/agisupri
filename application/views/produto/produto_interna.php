@@ -31,19 +31,22 @@
 	<!-- cabeçalho  -->
 	<section class="main-header">
 		<?php include 'application/views/templates/header.php';?>
+
 	</section>
+
 	<section>
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="/agisupri/index.php/produto/lista">PRODUTOS</a></li>
-				<li><a href="#"><?php echo $produto_detalhe["segmento"]["nome_segmento"]; ?></a></li>
+					<?php /*<li><a href="#"><?php echo $produto_detalhe["segmento"]["nome_segmento"]; ?></a></li>
 				<li><a href="#"><?php echo $produto_detalhe["categoria"]["nome_categoria"]; ?></a></li>
-				<li><a href="#"><?php echo $produto_detalhe["nome"]; ?></a></li>
+				<li><a href="#"><?php echo $produto_detalhe["nome"];  ?></a></li>*/?>
 			</ul>
 		</div>
 		<div class="faixacategoria listasub">
 			<div class="container">
 				<ul class="list-inline">
+					<?php /*
 					<?php foreach ($segmentos as $segmento) { ?>
 					<li><a class="atv" href=""><?php echo $segmento["nome_segmento"]?></a>
 						<div class="faixacont">
@@ -58,7 +61,8 @@
 							</div>
 						</div>
 					</li>
-					<?php } ?>
+					<?php } */ ?>
+					
 				</ul>
 			</div>
 		</div>
@@ -100,8 +104,12 @@
 					</div>
 				</div>
 			</div>
-			<form id="frm_orcamento">
+			<form id="frm_orcamento" action="/agisupri/index.php/orcamento/salvar" method="post">
 				<input type="hidden" name="id_produto" value="<?php echo $produto_detalhe["id_produto"]; ?>">
+				<input type="hidden" name="descricao" value="<?php echo $produto_detalhe["descricao"]; ?>">
+				<input type="hidden" name="nome_cor" id="nome_cor">
+				<input type="hidden" name="nome_produto" value="<?php echo $produto_detalhe["nome"]; ?>">
+				<input type="hidden" name="imagem_produto" value="<?php echo $produto_detalhe["imagem_produto1"]?>">
 				<div class="col-md-7 ref">
 					<p><strong>Referência:</strong> <?php echo $produto_detalhe["referencia"]; ?></p>
 					<p>Preencha todos os campos abaixo para fazer seu orçamento:</p>
@@ -153,8 +161,7 @@
 							<input type="text" class="form-control" name="cnpj" placeholder="CNPJ:" id="cnpj">
 						</div>
 					</div>
-	
-					<a href="javaScript:void(0);" onclick="enviarOrcamento();" class="btlaranja wow fadeInDown" data-wow-delay=".5s">Adicionar ao carrinho</a>
+					<br/><a href="javaScript:enviar_orcamento();" class="btlaranja wow fadeInDown" data-wow-delay=".5s">Adicionar ao carrinho</a>
 				</div>
 			</form>
 		</div>
@@ -171,6 +178,7 @@
 	<section class="produtosinterna" id="produtos">
 		<div class="container owlslide">
 			<div id="owl-demo" class="owl-carousel owl-theme">
+				<?php /*
 				<?php foreach ($produtos_relacionados as $relacionado) { ?>
 				<div class="item">
 					<div class="box" href="/agisupri/index.php/produto/detalhe/<?php echo $relacionado['id_produto']?>"> 
@@ -188,10 +196,11 @@
 						</div>
 					</div>
 				</div>
-				<?php } ?>
+				<?php } */ ?>
 			</div>
 			<a class="prev"><img src="/agisupri/design_core/img/seta-esq.png" /></a> <a class="next"><img src="/agisupri/design_core/img/seta-dir.png" /></a>
 		</div>
+
 	</section>
 	<!-- rodapé -->
 	<?php include 'application/views/templates/footer.php';?>
@@ -224,10 +233,11 @@
 		});
 	</script>
 	<script>	
-	function enviarOrcamento() {
-		validar();
-		
+	function enviar_orcamento() {
 		if(validar()) {
+			$("#nome_cor").val($("#cor :selected").text());
+			$("#frm_orcamento").submit();
+			/*
 			$.ajax({
 				dataType:'json',			
 				url: '/agisupri/index.php/orcamento/salvar',			
@@ -240,6 +250,7 @@
 					alert("Ocorreu um erro ao salvar o contato!");			
 				}
 			});
+			*/
 		}
 	}
 
