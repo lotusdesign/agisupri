@@ -10,9 +10,7 @@ class Cadastrar_produto extends CI_Controller {
 	}
 
 	public function view() {
-		session_start();
-		
-		if(array_key_exists('usuario', $_SESSION)) {		
+		if($this->session->userdata('usuario')) {		
 			$data ['mensagem'] = '';
 			$data ['segmentos'] = $this->segmento_model->get_segmentos();
 			$this->load->view ( 'admin/cadastrar_produto', $data);
@@ -29,8 +27,7 @@ class Cadastrar_produto extends CI_Controller {
 	}
 	
 	public function salvar() {
-		session_start();
-		if(array_key_exists('usuario', $_SESSION)) {
+		if($this->session->userdata('usuario')) {
 			$insert_id = $this->produto_model->salvarProduto();
 			
 			$data ['mensagem'] = 'Produto salvo com sucesso!';

@@ -4,15 +4,16 @@ class Orcamento extends CI_Controller {
 	public function __construct() {
 		parent::__construct ();
 		$this->load->model ( 'orcamento_model' );
-		$this->load->model ( 'produto_model' );
 		$this->load->model ( 'categoria_model' );
 		$this->load->model ( 'segmento_model' );
+		$this->load->model ( 'produto_model' );
+		$this->load->model ( 'usuario_model' );
 		$this->load->model ( 'cor_model' );
+		$this->load->model ( 'cliente_model' );
 		$this->load->library('email');
 	}
 	
 	public function excluir($id_item = 0) {
-
 		$pedidos = $this->session->userdata('pedido');
 		$data = array();
 		
@@ -21,45 +22,107 @@ class Orcamento extends CI_Controller {
 				array_push($data, $pedido);
 			}
 		}
-		
 		if(count($data) == 0) {
 			$this->session->sess_destroy();
 		} else {
 			$this->session->set_userdata('pedido', $data);
 		}
-		
 		$this->load->view ( 'orcamento/confirma_exclusao', $data);
 	}
 	
-	public function solicitar() {
-	
-		$pedidos = $this->session->userdata('pedido');;
-	
-		foreach ($pedidos as $pedido) {
-			$data = array('id_produto' => $pedido['id_produto'],
-						  'id_cor' => $pedido['id_cor'],
-						  'quantidade' => $pedido['quantidade'],
-						  'nome_cliente' => $pedido['nome_cliente'],
-						  'email' => $pedido['email'],
-						  'telefone' => $pedido['telefone'],
-						  'empresa' => $pedido['empresa'],
-						  'cnpj' => $pedido['cnpj']);
-			
-			$this->db->insert('orcamentos', $data);
-			$this->db->insert_id();
-		}
+	public function orcar_catalogo() {
 		
-		$this->email->from('sandro33@gmail.com', 'Agisupri');
+		$cliente = $this->session->userdata('cliente');
+		
+		$email_message = "Pedido solicitado pelo site:<br/><br/>";
+		$email_message .= "Nome do cliente: " .$cliente['nome'] ."<br>";
+		$email_message .= "E-mail: " .$cliente['email'] ."<br>";
+		$email_message .= "Telefone: " .$cliente['telefone'] ."<br>";
+		$email_message .= "Empresa: " .$cliente['razaoSocial'] ."<br>";
+		$email_message .= "CNPJ: " .$cliente['cnpj'] ."<br><br>";
+		$email_message .= "<b>Itens do Pedido: <br>";
+		
+		$email_message .= "<table border='1' cellpading='0' cellspacing='0'>";
+		$email_message .= "<tr>";
+		$email_message .= "<td>Produto</td>";
+		$email_message .= "<td>Cor</td>";
+		$email_message .= "<td>Quantidade</td>";
+		$email_message .= "</tr>";
+		
+		$cores_selecionadas = $this->input->post('cor');
+		$ids_produto = $this->input->post('id_produto');
+		$produtos = $this->input->post('nome_produto');
+		$quantidade = $this->input->post('quantidade');
+		
+		
+		for ($i = 0; $i < count($cores_selecionadas); $i++) {
+			if($cores_selecionadas[$i] != '' && ($quantidade[$i] != '')) {
+				
+				$cor_desc = $this-> cor_model -> obter_cor($cores_selecionadas[$i]);
+				var_dump($cor_desc);
+				
+				$email_message .= "<tr>";
+				$email_message .= "<td>" .$produtos[$i] ."</td>";
+				$email_message .= "<td>" .$cor_desc['nome_cor'] ."</td>";
+				$email_message .= "<td>" .$quantidade[$i] ."</td>";
+				$email_message .= "</tr>";
+			}
+		}
+		$email_message .= "</table>";
+		
+		$this -> orcamento_model -> salvar_orcamento_catalogo($cores_selecionadas, $ids_produto, $quantidade, $cliente);
+		
+		$this->email->from('sandro33@gmail.com', 'Site Agisupri - Orçamento');
 		$this->email->to('sandro33@gmail.com');
 		
 		$this->email->subject('Solicitação de Orçamento');
-		$this->email->message('Testing the email class.');
+		$this->email->message($email_message);
 		
 		$this->email->send();
-		echo $this->email->print_debugger();
 		
 		$this->session->sess_destroy();
-		$this->load->view ( 'orcamento/confirma_solicitacao', $data);
+		$this->load->view ( 'orcamento/confirma_solicitacao');
+	}
+	
+	public function solicitar() {
+		$pedidos = $this->session->userdata('pedido');;
+		
+		$email_message = "Pedido solicitado pelo site:<br/><br/>";
+		$email_message .= "Nome do cliente: " .$pedidos[0]['nome_cliente'] ."<br>";
+		$email_message .= "E-mail: " .$pedidos[0]['email'] ."<br>";
+		$email_message .= "Telefone: " .$pedidos[0]['telefone'] ."<br>";
+		$email_message .= "Empresa: " .$pedidos[0]['empresa'] ."<br>";
+		$email_message .= "CNPJ: " .$pedidos[0]['cnpj'] ."<br><br>";
+		$email_message .= "<b>Itens do Pedido: <br>";
+		
+		$email_message .= "<table border='1' cellpading='0' cellspacing='0'>";
+		$email_message .= "<tr>";
+		$email_message .= "<td>Produto</td>";
+		$email_message .= "<td>Cor</td>";
+		$email_message .= "<td>Quantidade</td>";
+		$email_message .= "</tr>";
+		
+		foreach ($pedidos as $pedido) {
+			$email_message .= "<tr>";
+			$email_message .= "<td>" .$pedido['nome_produto'] ."</td>";
+			$email_message .= "<td>" .$pedido['nome_cor'] ."</td>";
+			$email_message .= "<td>" .$pedido['quantidade'] ."</td>";
+			$email_message .= "</tr>";
+		}
+		$email_message .= "</table>";
+		
+		$this -> orcamento_model -> salvar_orcamento($pedidos);
+		
+		$this->email->from('sandro33@gmail.com', 'Site Agisupri - Orçamento');
+		$this->email->to('tarcizo@agisupri.com.br');
+		
+		$this->email->subject('Solicitação de Orçamento');
+		$this->email->message($email_message);
+		
+		$this->email->send();
+		
+		$this->session->sess_destroy();
+		$this->load->view ( 'orcamento/confirma_solicitacao');
 	}
 
 	public function salvar() {
@@ -113,13 +176,22 @@ class Orcamento extends CI_Controller {
 				$i++;
 			}
 		}
-		
 		$this->load->view ( 'produto/produto_interna', $data);
 	}
 	
-	public function listar() {
+	public function listar_pedido() {
 		$data = $this->session->userdata('pedido');
 		$this->load->view ( 'orcamento/lista', $data);
+	}
+	
+	public function listar_orcamentos() {
+		$data['orcamentos'] = $this -> orcamento_model -> buscar_orcamentos();
+		$this->load->view ( 'admin/listar_orcamentos', $data);
+	}
+	
+	public function ver_itens_pedido($id_orcamento = 0) {
+		$data['orcamento'] = $this -> orcamento_model -> obter_orcamento($id_orcamento);
+		$this->load->view ( 'admin/ver_itens_pedido', $data);
 	}
 }
 ?>

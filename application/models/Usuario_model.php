@@ -2,11 +2,9 @@
 class Usuario_model extends CI_Model {
 
 	public function __construct() {
-		
 	}
 	
-	public function autenticar() {
-		
+	public function autenticar() {	
 		$data = array(
 				'login' => $this->input->post('txt_usuario'),
 				'senha' => $this->input->post('txt_senha')

@@ -48,18 +48,7 @@
 				</li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Nome Usuário</b></a></li>
 			</ul>
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav side-nav">
-					<li><a href="/agisupri/index.php/admin/view"><i class="fa fa-fw fa-dashboard"></i> Tela Inicial</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_segmento"><i class="fa fa-star"></i> Cadastrar Segmentos</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_categoria"><i class="fa fa-star"></i> Cadastrar Categorias</a></li>
-					<li><a href="/agisupri/index.php/admin/cadastrar_produto"><i class="fa fa-star"></i> Cadastrar Produtos</a></li>
-					<li><a href="/agisupri/index.php/admin/administrar_produtos"><i class="fa fa-star"></i> Administrar Produtos</a></li>
-					<li class="active"><a href="/agisupri/index.php/admin/cadastrar_cliente"><i class="fa fa-user"></i> Cadastrar Clientes</a></li>
-					<li><a href="/agisupri/index.php/admin/criar_catalogo"><i class="fa fa-user"></i> Criar Catálogo</a></li>
-					<li><a href="/agisupri/index.php/admin/ver_orcamentos"><i class="fa fa-user"></i> Visualizar Orçamentos</a></li>
-				</ul>
-			</div>
+			<?php include 'application/views/templates/menu_admin.php';?>
 			<!-- /.navbar-collapse -->
 		</nav>
 		<div id="page-wrapper">
@@ -119,6 +108,15 @@
 								<label>Estado:</label><input type="text" name="estado" class="form-control">
 							</div>
 							<div class="form-group">
+								<label>Nome de Usuário*:</label><input type="text" name="nome_usuario" class="form-control">
+							</div>
+							<div class="form-group">
+								<label>Senha*:</label><input type="password" name="senha" class="form-control">
+							</div>
+							<div class="form-group">
+								*Somente usuários com nome de usuário e senha poderão acessar a área de clientes na Home do site.
+							</div>
+							<div class="form-group">
 								<label>Observaçoes:</label><br/><textarea name="observacoes" class="form-control"></textarea>
 							</div>
 							
@@ -138,35 +136,6 @@
 							<button type="submit" class="btn btn-sm btn-primary">ADICIONAR CLIENTE</button>
 							<button type="reset" class="btn btn-sm btn-primary">CANCELAR</button>
 						</form>
-						<div class="table-responsive">
-							<table class="table table-bordered table-hover tabelacliente">
-								<thead>
-									<tr>
-										<th>Cliente</th>
-										<th>Razão Social</th>
-										<th>Telefone</th>
-										<th>E-mail</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php foreach ($clientes as $cliente) { ?>
-									<tr>
-										<td><a href="editar-cliente.html"><?php echo $cliente['nome']?></a></td>
-										<td><a href="editar-cliente.html"><?php echo $cliente['razaoSocial']?></a></td>
-										<td><a href="editar-cliente.html"><?php echo $cliente['telefone']?></a></td>
-										<td><a href="editar-cliente.html"><?php echo $cliente['email']?></a></td>
-										<td>
-											<a href="/agisupri/index.php/admin/excluir_cliente/<?php echo $cliente['idCliente']?>" 
-												title="Excluir" class="fa fa-times"></a> 
-											<a href="/agisupri/index.php/admin/editar_produto/<?php echo $cliente['idCliente']?>" 
-												title="Editar" class="fa fa-pencil-square-o"></a>
-										</td>
-									</tr>
-									<?php } ?>
-								</tbody>
-							</table>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -201,7 +170,7 @@
           });
       });
 
-      <?php if ($mensagem != '') { ?>
+      <?php if (isset($mensagem)) { ?>
 		alert('<?php echo $mensagem; ?>');
       <?php } ?>
     </script>

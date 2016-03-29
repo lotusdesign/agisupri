@@ -1,6 +1,6 @@
 <?php
 
-$query = $this->db->get_where ( 'segmentos');
+$query = $this->db->get_where ( 'segmentos', array("status" => 1));
 $segmentos = $query->result_array ();
 
 for ($i = 0; $i < count($segmentos); $i ++) {
@@ -96,8 +96,11 @@ function validar_busca() {
 						<img src="/agisupri/design_core/img/icone-pedido.png" /> Confira seu pedido na área do cliente:						
 					</p>
 					<p>
-						<input type="text" value="Usuário" onblur="this.value='Usuário'" onfocus="this.value=''" /> 
-						<input type="password" value="Senha" onblur="this.value='Senha'" onfocus="this.value=''" />						
+						<form name="login_cliente" action="/agisupri/index.php/login_cliente/autenticar" method="post">
+							<input type="text" placeholder="Usuário" name="usuario_cliente"/> 
+							<input type="password" placeholder="senha"  name="senha_cliente"/>
+							<input type="submit" value="ok"/>
+						</form>
 					</p>
 					<p class="shop">
 						<a href="/agisupri/index.php/orcamento/listar">

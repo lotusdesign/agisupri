@@ -72,7 +72,6 @@ $route['admin/salvar_categoria'] = '/categoria/salvar';
 $route['admin/excluir_categoria/(:any)'] = '/categoria/excluir/$1';
 $route['admin/salvar_edicao_categoria'] = '/categoria/salvar_edicao';
 $route['admin/carregar_categoria/(:any)'] = '/categoria/carregar_categoria/$1';
-
 /* PRODUTO */
 $route['admin/cadastrar_produto'] = '/cadastrar_produto/view';
 $route['admin/salvar_produto'] = '/cadastrar_produto/salvar';
@@ -81,12 +80,27 @@ $route['admin/excluir_produto/(:any)'] = '/administrar_produtos/excluir/$1';
 $route['admin/editar_produto/(:any)'] = '/administrar_produtos/carregar_produto/$1';
 /* CLIENTE */
 $route['admin/cadastrar_cliente'] = '/cliente/view';
+$route['admin/listar_cliente'] = '/cliente/listar';
+$route['admin/editar_cliente/(:any)'] = '/cliente/carregar_cliente/$1';
 $route['admin/salvar_cliente'] = '/cliente/salvar';
+$route['admin/salvar_edicao'] = '/cliente/editar';
 $route['admin'] = '/admin/view';
-
+/* COR */
+$route['admin/cadastrar_cor'] = '/cor/view';
+$route['admin/salvar_cor'] = '/cor/salvar';
+$route['admin/excluir_cor/(:any)'] = '/cor/excluir/$1';
 /* ORÇAMENTOS */
 $route['orcamento/salvar'] = '/orcamento/salvar';
-$route['orcamento/listar_pedido'] = '/orcamento/listar';
+$route['orcamento/listar'] = '/orcamento/listar_pedido';
 $route['orcamento/excluir_item/(:any)'] = '/orcamento/excluir/$1';
 $route['orcamento/confirma_exclusao'] = '/orcamento/confirma_exclusao';
 $route['orcamento/confirma_solicitacao'] = '/orcamento/confirma_solicitacao';
+$route['admin/ver_orcamentos'] = '/orcamento/listar_orcamentos';
+$route['admin/ver_itens_pedido/(:any)'] = '/orcamento/ver_itens_pedido/$1';
+
+/* CATALOGO */
+$route['admin/criar_catalogo'] = '/catalogo/criar_catalogo';
+$route['admin/salvar_catalogo'] = '/catalogo/salvar';
+
+/* LOGIN - CLIENTE */
+$route['login_cliente/autenticar/(:any)'] = '/login_cliente/autenticar/$1';

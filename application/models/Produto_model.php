@@ -2,7 +2,6 @@
 class Produto_model extends CI_Model {
 	
 	public function __construct() {
-		
 	}
 	
 	public function get_produtos($id = 0) {
