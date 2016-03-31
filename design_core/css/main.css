@@ -24,6 +24,8 @@ a:hover {text-decoration: none}
 .pedidos input {border:1px #eaeaea solid; border-radius:3px; width:70px; margin:0 2px; color:#858585; padding:3px; font:12px/12px 'Roboto'; font-weight:400; }
 .pedidos p {display:block; width:100%; font:12px/12px 'Roboto'; font-weight:400; color:#858585;}
 .pedidos p img {vertical-align: baseline;}
+.pedidos input[type="submit"] {width:30px; text-align:center; border:0; text-transform:uppercase; background:#235c94; transition: all 0.3s linear; color:#fff;}
+.pedidos input[type="submit"]:hover {background:#6ccee3; }
 
 /* Sliders */
 #owl-hero { overflow: hidden;}
@@ -99,9 +101,9 @@ a:hover {text-decoration: none}
 /* Produtos */
 #produtos {text-align:center; padding:70px 0;}
 #owl-demo {margin-bottom:25px;}
-#owl-demo .item, .resultados .item {margin: 10px; color: #FFF; border:1px #dbdbdb solid;padding: 8px; position: relative; min-height:225px;}
+#owl-demo .item, .resultados .item {margin: 10px; color: #FFF; border:1px #dbdbdb solid;padding: 8px; position: relative; min-height:300px;}
 #owl-demo p, .resultados p {font:14px/14px "Roboto"; font-weight:700; color:#858585; text-align:left; margin:10px 0 20px;}
-#owl-demo .item img, .resultados .item .box img {width:100%; border:1px #dbdbdb solid;}
+#owl-demo .item img, .resultados .item .box img {width:100%; height:210px; border:1px #dbdbdb solid;}
 .customNavigation{text-align: center;}
 .customNavigation a{-webkit-user-select: none; -khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 .owlslide {position:relative;}
@@ -111,7 +113,7 @@ a:hover {text-decoration: none}
 #owl-demo .item .box .legenda-box, .resultados .item .box .legenda-box {display: block; position: absolute; left:0; bottom: 0;width: 100%; height: 100%;text-align: center;color: #fff;opacity: 0;background: rgba(0, 0, 0, 0.9); -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 #owl-demo .item .legenda-box .legenda-box-conteudo, .resultados .item .legenda-box .legenda-box-conteudo {position: absolute;top: 50%;width: 100%; text-align: center; transform: translateY(-50%);}
 #owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto {text-transform: uppercase;font-size: 22px;font-weight: 700;}
-#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto img, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto img {width:auto; border:0;}
+#owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto img, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto img {width:auto; border:0; height:auto;}
 #owl-demo .item .legenda-box .legenda-box-conteudo .ver-produto p, .resultados .item .legenda-box .legenda-box-conteudo .ver-produto p {font:14px/14px "Roboto" !important; color:#fff !important; text-transform: none; text-align: center;}
 #owl-demo .item .box:hover .legenda-box, .resultados .item .box:hover .legenda-box {opacity: 1;}
 .resultados .item {min-height:400px !important;}
@@ -167,7 +169,7 @@ a:hover {text-decoration: none}
 .desc {clear:both;}
 .desc h2 {font:18px/20px "Roboto"; color:#235c94; text-transform: uppercase; font-weight:700;}
 .desc p {color:#8e8e8e; font:16px/24px "Roboto"; border-top:1px #939393 solid; border-bottom:1px #939393 solid; padding:10px 0; }
-.relacionados {text-align:center; text-transform: uppercase; font:20px/20px "Roboto"; font-weight:500; color:#fff; padding:25px 0; margin:15px 0;}
+section.relacionados {text-align:center; text-transform: uppercase; font:20px/20px "Roboto"; font-weight:500; color:#fff; padding:25px 0; margin:15px 0;}
 .produtosinterna .owlslide .prev, .produtosinterna .owlslide .next {top:150px;}
 
 /* Cadastro */
@@ -247,7 +249,7 @@ footer h6 {text-transform: uppercase; color: #fff; }
   .cont {margin-top:40px;}
 
 /* Produto Interna */
-.form1 .form-group:first-child, .form1 .form-group, .form2 .form-group:first-child, .form2 .form-group {width:100%; margin-left:0;}
+.form1 .form-group:first-child, .form1 .form-group, .form2 .form-group:first-child, .form2 .form-group {width:100% !important; margin-left:0 !important;}
 .formproduto {margin:0;}
 .form1 .form-group, .form2 .form-group, .form3 .form-group, .form4 .form-group, .form5 .form-group {margin:5px 0;}
 .ref {text-align: center;}
@@ -288,6 +290,9 @@ footer h6 {text-transform: uppercase; color: #fff; }
 #services h3 { font-size: 22px;}
 }
 
+/* LOGIN */
+.loginmsg {text-align:center; line-height:40px; font-size:20px; padding:100px 0;}
+.loginmsg a {color:#235c94; text-decoration: underline; font-size:20px;}
 
 @media (max-width: 650px) {
   /* Produtos */
@@ -372,6 +377,31 @@ html body .nav.navbar-nav li.dropdown-submenu ul.menucascata {top:100%; left:0;}
 .listasub ul li:hover a + .faixacont {display:block;}
 .faixacont {background:#1f569a; width:100%; position:absolute; top:100%; left:0; display:none; transition: all 1s ease-in-out; z-index:10;}
 .faixacategoria ul li a.atv {background: #357acf;}
+.faixacategoria.listasub .owl-item {}
+
+
+.faixacategoria {background: #1f569a; padding:0; margin-bottom:40px;}
+.faixacategoria div ul {margin-bottom:0;}
+.faixacategoria div ul li {width:18%; padding:35px 0;}
+.faixacategoria.listasub .container #owl-demo {margin:0;}
+.faixacategoria.listasub .container #owl-demo .owl-pagination .owl-page span {background:#357acf;}
+.faixacategoria.listasub .container #owl-demo .owl-pagination .owl-page.active span {background:#1579f4;}
+.faixacategoria.listasub .container #owl-demo .owl-wrapper-outer .owl-wrapper .owl-item .item {border:0; min-height:0; text-align:center;}
+.faixacategoria.listasub .owl-item .item a { font:20px/20px "Roboto"; color:#fff; transition: all 0.3s linear; padding:5px 0px; border-radius:20px;}
+
+.faixacategoria div ul li a:hover {background: #357acf; }
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+	.pedidos input[type="text"], .pedidos input[type="password"] {width:30%}
+}
+
+
 
 
 @media (min-width: 918px) {
