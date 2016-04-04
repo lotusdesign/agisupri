@@ -77,7 +77,7 @@
 					<div class="col-lg-6">
 						<div class="form-group">
 							<div class="table-responsive">
-								<table class="table table-bordered table-hover tabelacliente">
+								<table class="table table-bordered table-hover tabelacliente tabela">
 									<thead>
 										<tr>
 											<th>Nome do Cliente</th>

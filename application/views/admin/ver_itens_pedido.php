@@ -86,18 +86,22 @@
 								
 								<b>Itens do Pedido: </b><br>
 
-								<table border='1' cellpading='0' cellspacing='0'>
-								<tr>
-									<td><b>Produto</b></td>
-									<td><b>Cor</b></td>
-									<td><b>Quantidade</b></td>
-								</tr>
+								<table cellpading='0' cellspacing='0' class="table table-bordered table-hover tabelacliente tabela">
+									<thead>
+										<tr>
+											<th><b>Produto</b></th>
+											<th><b>Cor</b></th>
+											<th><b>Quantidade</b></th>
+										</tr>
+									</thead>
 								<?php foreach ($orcamento as $orc) { ?>
+								<tbody>
 									<tr>
 									<td><?php echo $orc['nome'] ?></td>
 									<td><?php echo $orc['nome_cor']  ?></td>
 									<td><?php echo $orc['quantidade']  ?></td>
 									</tr>
+								</tbody>
 								<?php } ?>
 								</table>
 							</div>

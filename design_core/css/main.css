@@ -293,6 +293,8 @@ footer h6 {text-transform: uppercase; color: #fff; }
 /* LOGIN */
 .loginmsg {text-align:center; line-height:40px; font-size:20px; padding:100px 0;}
 .loginmsg a {color:#235c94; text-decoration: underline; font-size:20px;}
+#fundobranco .container div.loginmsg p {margin:10px 0; line-height:20px; font-size:20px;}
+
 
 @media (max-width: 650px) {
   /* Produtos */
@@ -473,3 +475,21 @@ html nav.top-nav-collapse li.input-group {
 .shop:hover {background: #6ccee3;}
 .shop i {font-size:20px; line-height:40px; color:#fff;}
 .shop span {color:#fff;}
+
+.tabela { background: #f5f5f5; border-collapse: separate; box-shadow: inset 0 1px 0 #fff; font-size: 12px; line-height: 24px; margin: 30px auto; text-align: left; width: 100%;}	
+.tabela th {background: linear-gradient(#777, #444); border-left: 1px solid #555; border-right: 1px solid #777; border-top: 1px solid #555; border-bottom: 1px solid #333; box-shadow: inset 0 1px 0 #999; color: #fff; font-weight: bold; padding: 10px 15px; position: relative; text-shadow: 0 1px 0 #000;	}
+.tabela th:after { background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08)); content: ''; display: block; height: 25%; left: 0; margin: 1px 0 0 0; position: absolute; top: 25%; width: 100%;}
+.tabela th:first-child { border-left: 1px solid #777;	 box-shadow: inset 1px 1px 0 #999;}
+.tabela th:last-child { box-shadow: inset -1px 1px 0 #999;}
+.tabela td {border-right: 1px solid #fff;border-left: 1px solid #e8e8e8;border-top: 1px solid #fff;border-bottom: 1px solid #e8e8e8;padding: 10px 15px;position: relative;transition: all 300ms;}
+.tabela td:first-child {box-shadow: inset 1px 0 0 #fff;}	
+.tabela td:last-child {border-right: 1px solid #e8e8e8;box-shadow: inset -1px 0 0 #fff;}	
+.tabela tr:nth-child(odd) td {background: #f1f1f1;	}
+.tabela tr:last-of-type td {box-shadow: inset 0 -1px 0 #fff; }
+.tabela tr:last-of-type td:first-child {box-shadow: inset 1px -1px 0 #fff;}	
+.tabela tr:last-of-type td:last-child {box-shadow: inset -1px -1px 0 #fff;}	
+.tabela tbody:hover td {color: transparent;text-shadow: 0 0 3px #aaa;}
+.tabela tbody:hover tr:hover td {color: #444;text-shadow: 0 1px 0 #fff;}
+.tabela tbody:hover td img {-webkit-filter: blur(5px); -moz-filter: blur(5px); filter: blur(5px);}
+.tabela tbody:hover tr:hover td img {-webkit-filter: blur(0px); -moz-filter: blur(0px); filter: blur(0px); }
+.tabela td input, .tabela td select {border:1px #000 solid; padding:5px;}

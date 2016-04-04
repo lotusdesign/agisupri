@@ -78,7 +78,7 @@
 						</form>
 						<brt/><br/>
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover tabelacliente">
+							<table class="table table-bordered table-hover tabelacliente tabela">
 								<thead>
 									<tr>
 										<th>Cor</th>

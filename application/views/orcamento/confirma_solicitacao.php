@@ -34,22 +34,14 @@
 	<section id="fundobranco">
 		<div class="container">
 			<h2><div>Solitação de Orçamento</div></h2>
-	<div id="inline1" class="col-md-12">
-		<div>
-			<p class="col-md-2">
-				<img src="/agisupri/design_core/img/cadastro.png" class="img-responsive" />
-			</p>
-			<p class="col-md-8">
-				Solitação de Orçamento enviado com sucesso!
-			</p>
-		</div>
-		<div>
-			<p class="col-md-6">
-				Em breve entraremos em contato.
-			</p>
-		</div>
-	</div>
-		</div>
+			<div class="col-xs-12 loginmsg">
+				<p>
+					Solitação de Orçamento enviado com sucesso!
+				</p>
+				<p>
+					Em breve entraremos em contato.
+				</p>
+			</div>
 	</section>
 	<!-- Rodapé -->
 	<?php include 'application/views/templates/footer.php';?>

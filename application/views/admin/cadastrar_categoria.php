@@ -84,11 +84,12 @@
 							<button type="reset" class="btn btn-sm btn-primary">CANCELAR</button>
 						</form>
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover tabelacliente">
+							<table class="table table-bordered table-hover tabelacliente tabela">
 								<thead>
 									<tr>
 										<th>Categoria</th>
 										<th>Segmento</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>

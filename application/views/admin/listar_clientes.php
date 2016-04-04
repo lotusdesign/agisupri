@@ -67,7 +67,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="table-responsive">
-							<table class="table table-bordered table-hover tabelacliente">
+							<table class="table table-bordered table-hover tabelacliente tabela">
 								<thead>
 									<tr>
 										<th>Cliente</th>

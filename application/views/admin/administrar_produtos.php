@@ -81,7 +81,7 @@
 							<div class="form-group">
 
 								<div class="table-responsive">
-									<table class="table table-bordered table-hover tabelacliente">
+									<table class="table table-bordered table-hover tabelacliente tabela">
 										<thead>
 											<tr>
 												<th>Imagem</th>
@@ -90,7 +90,7 @@
 												<th>Categoria</th>
 												<th>Referência</th>
 												<th>Descrição</th>
-												<th>&nbsp;</th>
+												<th></th>
 											</tr>
 										</thead>
 										<tbody>

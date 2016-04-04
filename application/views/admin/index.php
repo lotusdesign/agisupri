@@ -59,18 +59,14 @@
 						<h1 class="page-header">
 							Olá <small> <?php echo $usuario['nome_usuario']?></small>
 						</h1>
-						<b>Cadastrar Segmentos</b> - Tela para cadastro de segmentos de produtos.<br/>
-						<b>Cadastrar Categorias</b> - Tela para cadastro de categorias de produtos. É necessário cadastrar o segmento.<br/>
-						<b>Cadastrar Produtos</b> - Tela para cadastro de produtos. É necessário Cadastrar Categoriass.<br/>
-						<b>Administrar Produtos</b> - Nessa tela é possível listas, editar e excluir produtos.<br/>
-						<b>Cadastrar Clientes</b> - Tela para cadastro de clientes. É possível selecionar os clientes que serão apresentados na home do site.<br/>
-						<b>Criar Catálogo</b> - Tela para criação de catálogos de produtos por cliente.<br/>
-						<b>Visualizar Orçamentos</b> - Nessa tela são apresentados os orçamentos solicitados pelos clientes no site.<br/>
-						<b>Usuários</b> - Tela para cadastro, edição e exclusão de usuários do Painel de Administração.<br/>
-						<br/><br/>
-						<br/><br/>
-						<br/><br/>
-						<br/><br/>
+						<p><b>Cadastrar Segmentos</b> - Tela para cadastro de segmentos de produtos.<p />
+						<p><b>Cadastrar Categorias</b> - Tela para cadastro de categorias de produtos. É necessário cadastrar o segmento.<p />
+						<p><b>Cadastrar Produtos</b> - Tela para cadastro de produtos. É necessário Cadastrar Categoriass.<p />
+						<p><b>Administrar Produtos</b> - Nessa tela é possível listas, editar e excluir produtos.<p />
+						<p><b>Cadastrar Clientes</b> - Tela para cadastro de clientes. É possível selecionar os clientes que serão apresentados na home do site.<p />
+						<p><b>Criar Catálogo</b> - Tela para criação de catálogos de produtos por cliente.<p />
+						<p><b>Visualizar Orçamentos</b> - Nessa tela são apresentados os orçamentos solicitados pelos clientes no site.<p />
+						<p><b>Usuários</b> - Tela para cadastro, edição e exclusão de usuários do Painel de Administração.<p />
 					</div>
 				</div>
 				<!-- /.row -->

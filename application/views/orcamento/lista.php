@@ -34,18 +34,22 @@
 	<section id="fundobranco">
 		<div class="container">
 			<h2><div>Itens do Pedido de orçamento</div></h2>
-			<div class="col-md-3 col-xs-6 resultados">
-				<table border="1" style='width: 100%;'>
+			<div class="col-xs-12 resultados table-responsive">
+				<table cellpadding="0" cellspacing="0" class="tabela">
 					<?php if(isset($pedido)) { ?>
-						<tr>
-							<th style='width: 10%'>Foto</th>
-							<th style='width: 10%'>Nome do Produto</th>
-							<th style='width: 10%'>Cor</th>
-							<th style='width: 30%'>Descrição</th>
-							<th style='width: 10%'>Quantidade</th>
-							<th>Excluir</th>
-						</tr>
+						<thead>
+							<tr>
+								<th>Foto</th>
+								<th>Nome do Produto</th>
+								<th>Cor</th>
+								<th>Descrição</th>
+								<th>Quantidade</th>
+								<th>Excluir</th>
+							</tr>
+						</thead>
+						<tbody>
 					<?php foreach ($pedido as $item) { ?>
+					<tbody>
 						<tr>
 							<td><img src="/agisupri/design_core/img/produtos/<?php echo $item['imagem_produto']; ?>" width="50"></td>
 							<td><?php echo $item['nome_produto']; ?></td>
@@ -62,6 +66,7 @@
 					?>
 						<tr><td>Não há itens adicionados ao carrinho</td></tr>
 					<?php } ?>
+					</tbody>
 				</table>
 				<?php if(isset($pedido)) { ?>
 				<br/><br/>

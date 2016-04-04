@@ -34,21 +34,14 @@
 	<section id="fundobranco">
 		<div class="container">
 			<h2><div>Exclusão de Item do Pedido</div></h2>
-	<div id="inline1" class="col-md-12">
-		<div>
-			<p class="col-md-2">
-				<img src="/agisupri/design_core/img/cadastro.png" class="img-responsive" />
-			</p>
-			<p class="col-md-8">
-				Item excluído do pedido com sucesso!
-			</p>
-		</div>
-		<div>
-			<p class="col-md-6">
-				Para voltar à lista de produtos do seu orçamento <br> <a href="/agisupri/index.php/orcamento/listar" class="btlaranja">clique aqui</a>
-			</p>
-		</div>
-	</div>
+			<div class="col-xs-12 loginmsg">
+				<p>
+					Item excluído do pedido com sucesso!
+				</p>
+				<p>
+					Para voltar à lista de produtos do seu orçamento <br> <a href="/agisupri/index.php/orcamento/listar" class="btlaranja">clique aqui</a>
+				</p>
+			</div>
 		</div>
 	</section>
 	<!-- Rodapé -->

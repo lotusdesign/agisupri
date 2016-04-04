@@ -35,33 +35,37 @@
 		<div class="container">
 			<h2><div>Catálogo de produtos</div></h2>
 			<form name="frmCatalogo" action="/agisupri/index.php/orcamento/orcar_catalogo" method="post">
-				<div class="col-md-3 col-xs-6 resultados">
-					<table border="1" style='width: 100%;'>
-						<tr>
-							<th style='width: 10%'>Foto</th>
-							<th style='width: 10%'>Nome do Produto</th>
-							<th style='width: 10%'>Cor</th>
-							<th style='width: 30%'>Descrição</th>
-							<th style='width: 10%'>Quantidade</th>
-						</tr>
-						<?php foreach ($itens as $item) { ?>
+				<div class="col-xs-12 resultados table-responsive">
+					<table cellpadding="0" cellspacing="0" class="tabela">
+						<thead>
 							<tr>
-								<td><img src="/agisupri/design_core/img/produtos/<?php echo $item['imagem_produto1']; ?>" width="50"></td>
-								<td><?php echo $item['nome']; ?></td>
-								<td>
-									<input type="hidden" name="id_produto[]" value="<?php echo $item['id_produto']; ?>" />
-									<input type="hidden" name="nome_produto[]" value="<?php echo $item['nome']; ?>" />
-									<select name="cor[]">
-										<option value="">Selecione a cor</option>
-										<?php foreach ($cores as $cor) { ?>
-											<option value="<?php echo $cor['id_cor']?>"><?php echo $cor['nome_cor']?></option>
-										<?php } ?>
-									</select>
-								</td>
-								<td><?php echo $item['descricao']; ?></td>
-								<td><input type="text" name="quantidade[]"></td>
+								<th>Foto</th>
+								<th>Nome do Produto</th>
+								<th>Cor</th>
+								<th>Descrição</th>
+								<th>Quantidade</th>
 							</tr>
-						<?php } ?>
+						</thead>
+						<tbody>
+							<?php foreach ($itens as $item) { ?>
+								<tr>
+									<td><img src="/agisupri/design_core/img/produtos/<?php echo $item['imagem_produto1']; ?>" width="50"></td>
+									<td><?php echo $item['nome']; ?></td>
+									<td>
+										<input type="hidden" name="id_produto[]" value="<?php echo $item['id_produto']; ?>" />
+										<input type="hidden" name="nome_produto[]" value="<?php echo $item['nome']; ?>" />
+										<select name="cor[]">
+											<option value="">Selecione a cor</option>
+											<?php foreach ($cores as $cor) { ?>
+												<option value="<?php echo $cor['id_cor']?>"><?php echo $cor['nome_cor']?></option>
+											<?php } ?>
+										</select>
+									</td>
+									<td><?php echo $item['descricao']; ?></td>
+									<td><input type="text" name="quantidade[]"></td>
+								</tr>
+							<?php } ?>
+						</tbody>
 					</table>
 					<br/><br/>
 					<p align="left"><input type="submit" class="btlaranja" value="Solicitar Orçamento"/></p>
